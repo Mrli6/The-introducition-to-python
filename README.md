@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+# python 报错
 
-You can use the [editor on GitHub](https://github.com/Mrli6/The-introducition-to-python/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## pip报错
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+安装、更新第三方库报错timeout的解决方法
 
-### Markdown
+* 设置延迟时间
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+pip --default-timeout=1000 install ...
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+* 使用镜像站
 
-### Jekyll Themes
+```
+临时使用清华源
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple ...
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Mrli6/The-introducition-to-python/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## pyinstaller报错
 
-### Support or Contact
+用图片打包程序时，出现了报错：AttributeError: module 'win32ctypes.pywin32.win32api' has no attribute 'error'。这是因为打包的图片格式不对，图片格式改为ico。
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+改为ico后，又出现的这样的报错：struct.error: unpack requires a buffer of 16 bytes。解决方法：“http://ico.duduxuexi.com/” 将图片生成为16\*16的图标文件。
